@@ -1,0 +1,24 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <choose-quantity
+    [increment]="10"
+    formControlName="totalQuantity"
+  ></choose-quantity>
+
+  <div>
+    form.value {{ form.value | json }}
+    <br />
+    form.status {{ form.status | json }}
+    <br />
+    form.dirty {{ form.dirty | json }}
+    <br />
+    form.pristine {{ form.pristine | json }}
+    <br />
+    form.touched {{ form.touched | json }}
+  </div>
+
+  <button (click)="reset()">Reset</button>
+  <button (click)="setValue()">Set Value</button>
+</form>
